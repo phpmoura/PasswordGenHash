@@ -1,12 +1,5 @@
-import string
-import random
-
-def pass_gen(size):
-    generatePassword = "".join(random.choice(
-        string.ascii_letters + string.digits + string.punctuation) 
-        for n in range(size))
-    
-    return generatePassword
+from passwordGen import pass_gen
+from hashpassword import passwordToHash
 
 def password_gen():
     while True:
@@ -17,5 +10,6 @@ def password_gen():
         except ValueError:
             print("Error: Please enter a valid integer")
 
-new_password = password_gen()
-print(new_password)
+my_password = password_gen
+my_hash = passwordToHash(my_password)
+print(my_hash)
